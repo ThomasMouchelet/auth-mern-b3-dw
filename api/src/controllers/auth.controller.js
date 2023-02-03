@@ -2,6 +2,7 @@ const User = require('../models/user.model')
 const bcrypt = require('bcrypt');
 const salt = 10;
 const jwt = require('jsonwebtoken');
+const transporter = require('../../config/nodemail.config');
 
 const AuthController = {
     signin: async (req, res) => {
@@ -36,11 +37,20 @@ const AuthController = {
         try {
             await user.save()
             res.send(user)
+
+            var mailOptions = {
+                from: 'youremail@gmail.com',
+                to: user.email,
+                subject: 'Sending Email using Node.js',
+                text: `Welcome ${user.email} to my website`
+            };
+        
+            await transporter.sendMail(mailOptions);
         } catch (error) {
             res.status(500).send({error: error.message})
         }  
         
-        // send mail confimation
+        
     }
 }
 
