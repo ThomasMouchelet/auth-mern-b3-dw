@@ -4,5 +4,7 @@ const router = express.Router()
 
 router.post("/signin" , AuthController.signin)
 router.post("/signup" , AuthController.signup)
+router.post("/forgot-password", AuthController.forgotPassword)
+router.post("/reset-password", AuthController.resetPassword)
 
 module.exports = router
