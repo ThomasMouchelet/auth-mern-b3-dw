@@ -4,9 +4,11 @@ const PORT = 8000;
 const postRouter = require('./src/routers/post.router')
 const authRouter = require('./src/routers/auth.router')
 const mongoConnect = require('./config/mongo.config');
+const cors = require('cors')
 mongoConnect()
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

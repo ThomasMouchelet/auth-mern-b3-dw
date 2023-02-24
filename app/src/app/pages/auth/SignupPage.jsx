@@ -1,13 +1,11 @@
+import SignupForm from "../../components/auth/SignupForm";
+
 const SignupPage = () => {
     return ( 
         <div>
             <h1>Signup page</h1>
             
-            {/* form */}
-            {/* input email */}
-            {/* input password */}
-            {/* input confirm password */}
-            {/* /form */}
+            <SignupForm />
         </div>
      );
 }

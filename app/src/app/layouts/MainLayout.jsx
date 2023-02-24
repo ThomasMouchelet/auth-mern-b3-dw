@@ -1,24 +1,9 @@
-import { Link } from "react-router-dom";
+import Navbar from "../components/ui/Navbar";
 
 const MainLayout = ({children}) => {
     return ( 
         <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/account">Account</Link>
-                    </li>
-                    <li>
-                        <Link to="/auth/signin">Signin</Link>
-                    </li>
-                    <li>
-                        <Link to="/auth/signup">Signup</Link>
-                    </li>
-                </ul>
-            </nav>
+            <Navbar />
 
             <div>
                 {children}

@@ -1,4 +1,4 @@
-const AuthInputs = () => {
+const AuthInputs = ({handleChange, confirmPassword}) => {
     return ( 
         <>
             <div className="form-group">
@@ -6,6 +6,7 @@ const AuthInputs = () => {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    onChange={handleChange}
                 />
             </div>
             <div className="form-group">
@@ -13,15 +14,19 @@ const AuthInputs = () => {
                     type="password"
                     name="password"
                     placeholder="Password"
+                    onChange={handleChange}
                 />
             </div>
-            <div className="form-group">
-                <input 
-                    type="password"
-                    name="confirmPassword"
-                    placeholder="Confirm Password"
-                />
-            </div>
+            {confirmPassword && 
+                <div className="form-group">
+                    <input 
+                        type="password"
+                        name="confirmPassword"
+                        placeholder="Confirm Password"
+                        onChange={handleChange}
+                    />
+                </div>
+            }
         </>
      );
 }
